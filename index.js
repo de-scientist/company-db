@@ -175,7 +175,7 @@ createEmployee("EMP011", "Ann", "Chebet", "ann.chebet@company.com", 78000.00, "D
       }
     });
 
-    
+
     //Write a function deleteEmployee that deletes the employee with id EMP011
     async function deleteEmployee(employeeId) {
       const deletedEmployee = await prisma.employee.delete({
@@ -186,6 +186,7 @@ createEmployee("EMP011", "Ann", "Chebet", "ann.chebet@company.com", 78000.00, "D
       return deletedEmployee;
     } 
 
+    
     // Call the deleteEmployee function with the ID "EMP011" and log the result
     const deleteEmployeeId = "EMP011";
     deleteEmployee(deleteEmployeeId).then((deletedEmployee) => {
