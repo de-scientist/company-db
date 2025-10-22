@@ -184,7 +184,7 @@ createEmployee("EMP011", "Ann", "Chebet", "ann.chebet@company.com", 78000.00, "D
       });
       return deletedEmployee;
     } 
-    
+
     // Call the deleteEmployee function with the ID "EMP011" and log the result
     const deleteEmployeeId = "EMP011";
     deleteEmployee(deleteEmployeeId).then((deletedEmployee) => {
@@ -204,6 +204,7 @@ createEmployee("EMP011", "Ann", "Chebet", "ann.chebet@company.com", 78000.00, "D
       return updatedEmployee;
     }
 
+    
     // Call the updateEmployee function to change the salary of EMP010 and log the result
     const updateEmployeeId = "EMP010";
     const newSalary = 90000.00;
