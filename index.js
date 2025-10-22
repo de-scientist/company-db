@@ -35,33 +35,7 @@ main()
     await prisma.$disconnect();
   });
 
-
-
-
-    //Write a function named getEmployee that retrieves a single employee based on their ID, including their department details. The function should take one parameter, the employee ID, and use Prisma's findUnique() method with the include option to fetch the employee along with their related department information.
-    async function getEmployee(employeeId) {
-      const employee = await prisma.employee.findUnique({
-        where: {
-          id: employeeId,
-        },
-        include: {
-          department: true,
-        },
-      });
-      return employee;
-    }
-
-
-    // Call the getEmployee function with a sample ID and log the result
-    const sampleEmployeeId = "EMP001";
-    getEmployee(sampleEmployeeId).then((employee) => {
-      if (employee) {
-        console.log('Employee Found with Department:', employee);
-      } else {
-        console.log('Employee not found');
-      }
-    });
-
+   
 
     //Write a function named getBySalaryRange that retrieves all employees whose salaries fall within a specified range. The function accepts two parameters: min: minimum salary value. max: maximum salary value. Before performing the query, add a validation check: if min is greater than max, throw an error "Minimum cannot be greater than maximum" If the values are valid, use Prisma's findMany() method to fetch all employees whose salary is between the given min and max values.
     async function getBySalaryRange(min, max) {
