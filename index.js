@@ -43,3 +43,6 @@ main()
   }
 
     // Call the getDepartments function and log the results
+    getDepartments().then((departments) => {
+      console.log('All Departments:', departments);
+    });
