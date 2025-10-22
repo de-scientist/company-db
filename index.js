@@ -137,6 +137,7 @@ createEmployee("EMP010", "Faith", "Achieng", "faith.achieng@company.com", 78000.
 createEmployee("EMP011", "Ann", "Chebet", "ann.chebet@company.com", 78000.00, "DPT003");
 
 
+
 //Write a function named getEmployees that retrieves all employees from the database, including their department details. Your function should use Prisma's findMany() method with the include option to fetch each employee along with their related department information.
     async function getEmployees() {
       const employees = await prisma.employee.findMany({
@@ -166,7 +167,7 @@ createEmployee("EMP011", "Ann", "Chebet", "ann.chebet@company.com", 78000.00, "D
       return employee;
     }
 
-    
+
     // Call the getEmployee function with a sample ID and log the result
     const sampleEmployeeId = "EMP001";
     getEmployee(sampleEmployeeId).then((employee) => {
