@@ -77,6 +77,7 @@ main()
       return deletedDepartment;
     }
 
+    
     // Call the deleteDepartment function with the ID "DPT006" and log the result
     const deleteId = "DPT006";
     deleteDepartment(deleteId).then((deletedDepartment) => {
