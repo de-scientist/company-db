@@ -36,25 +36,6 @@ main()
   });
 
     
-
-
-    //Write a function deleteEmployee that deletes the employee with id EMP011
-    async function deleteEmployee(employeeId) {
-      const deletedEmployee = await prisma.employee.delete({
-        where: {
-          id: employeeId,
-        },
-      });
-      return deletedEmployee;
-    } 
-
-
-    // Call the deleteEmployee function with the ID "EMP011" and log the result
-    const deleteEmployeeId = "EMP011";
-    deleteEmployee(deleteEmployeeId).then((deletedEmployee) => {
-      console.log('Deleted Employee:', deletedEmployee);
-    });
-    
     //Write a function called updateEmployee that updates the `salary of employee with id "EMP010" to 90000 respectively. The function should use Prisma's update() method to find the employee by their ID and modify the salary field.
     async function updateEmployee(employeeId, newSalary) {
       const updatedEmployee = await prisma.employee.update({
