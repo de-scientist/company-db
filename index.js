@@ -37,22 +37,6 @@ main()
 
 
 
-//Write a function named getEmployees that retrieves all employees from the database, including their department details. Your function should use Prisma's findMany() method with the include option to fetch each employee along with their related department information.
-    async function getEmployees() {
-      const employees = await prisma.employee.findMany({
-        include: {
-          department: true,
-        },
-      });
-      return employees;
-    }
-
-
-    // Call the getEmployees function and log the results
-    getEmployees().then((employees) => {
-      console.log('All Employees with Departments:', employees);
-    });
-
 
     //Write a function named getEmployee that retrieves a single employee based on their ID, including their department details. The function should take one parameter, the employee ID, and use Prisma's findUnique() method with the include option to fetch the employee along with their related department information.
     async function getEmployee(employeeId) {
