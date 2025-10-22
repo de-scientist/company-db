@@ -32,5 +32,5 @@ model Employee {
 
   @@index([DepartmentID], name: "IX_Employee_DepartmentID")
 
-  
+  @@map("Employees")
 }
