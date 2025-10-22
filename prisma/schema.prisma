@@ -13,3 +13,24 @@ datasource db {
   provider = "sqlserver"
   url      = env("DATABASE_URL")
 }
+
+model Department {
+  ID   String      @id 
+  DepartmentName String    @db.NVarChar(50)
+  Location       String?   @db.NVarChar(100)
+  employees     Employee[]
+}
+
+model Employee {
+  ID           String     @id 
+  FirstName    String     @db.NVarChar(50)
+  LastName     String     @db.NVarChar(50)
+  Email        String     @db.NVarChar(100) @unique
+  Salary       Float      @db.Float
+  DepartmentID String     @db.NVarChar(50)
+  Department   Department @relation(fields: [DepartmentID], references: [ID])
+
+  @@index([DepartmentID], name: "IX_Employee_DepartmentID")
+
+  
+}
