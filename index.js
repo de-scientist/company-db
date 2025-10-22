@@ -204,6 +204,7 @@ createEmployee("EMP011", "Ann", "Chebet", "ann.chebet@company.com", 78000.00, "D
       console.error(error.message);
     });
 
+
     //Write a function deleteEmployee that deletes the employee with id EMP011
     async function deleteEmployee(employeeId) {
       const deletedEmployee = await prisma.employee.delete({
