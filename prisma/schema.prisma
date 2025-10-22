@@ -19,6 +19,8 @@ model Department {
   DepartmentName String    @db.NVarChar(50)
   Location       String?   @db.NVarChar(100)
   employees     Employee[]
+
+  @@map("Departments")
 }
 
 model Employee {
