@@ -194,7 +194,15 @@ createEmployee("EMP011", "Ann", "Chebet", "ann.chebet@company.com", 78000.00, "D
         },
       });
       return employees;
-    }
+    } 
+    // Call the getBySalaryRange function with sample values and log the results
+    const minSalary = 70000.00;
+    const maxSalary = 90000.00;
+    getBySalaryRange(minSalary, maxSalary).then((employees) => {
+      console.log(`Employees with salary between ${minSalary} and ${maxSalary}:`, employees);
+    }).catch((error) => {
+      console.error(error.message);
+    });
 
     //Write a function deleteEmployee that deletes the employee with id EMP011
     async function deleteEmployee(employeeId) {
