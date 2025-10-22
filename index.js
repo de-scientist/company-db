@@ -148,6 +148,7 @@ createEmployee("EMP011", "Ann", "Chebet", "ann.chebet@company.com", 78000.00, "D
       return employees;
     }
 
+    
     // Call the getEmployees function and log the results
     getEmployees().then((employees) => {
       console.log('All Employees with Departments:', employees);
