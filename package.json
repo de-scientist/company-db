@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "prisma": "^6.17.1",
     "typescript": "~5.8.3",
     "vite": "^7.1.7"
   }
