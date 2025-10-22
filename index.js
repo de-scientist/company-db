@@ -148,7 +148,7 @@ createEmployee("EMP011", "Ann", "Chebet", "ann.chebet@company.com", 78000.00, "D
       return employees;
     }
 
-    
+
     // Call the getEmployees function and log the results
     getEmployees().then((employees) => {
       console.log('All Employees with Departments:', employees);
@@ -179,6 +179,22 @@ createEmployee("EMP011", "Ann", "Chebet", "ann.chebet@company.com", 78000.00, "D
       }
     });
 
+
+    //Write a function named getBySalaryRange that retrieves all employees whose salaries fall within a specified range. The function accepts two parameters: min: minimum salary value. max: maximum salary value. Before performing the query, add a validation check: if min is greater than max, throw an error "Minimum cannot be greater than maximum" If the values are valid, use Prisma's findMany() method to fetch all employees whose salary is between the given min and max values.
+    async function getBySalaryRange(min, max) {
+      if (min > max) {
+        throw new Error("Minimum cannot be greater than maximum");
+      }
+      const employees = await prisma.employee.findMany({
+        where: {
+          salary: {
+            gte: min,
+            lte: max,
+          },
+        },
+      });
+      return employees;
+    }
 
     //Write a function deleteEmployee that deletes the employee with id EMP011
     async function deleteEmployee(employeeId) {
