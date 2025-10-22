@@ -123,7 +123,7 @@ main()
       return employee;
     }
 
-    // Call the createEmployee function to add a new employee and log the result
+    // Call the createEmployee function to add new employees and log the result
     createEmployee("EMP001", "John", "Mwangi", "john.mwangi@company.com", 65000.00, "DPT001");
 createEmployee("EMP002", "Alice", "Otieno", "alice.otieno@company.com", 92000.00, "DPT002");
 createEmployee("EMP003", "Brian", "Kariuki", "brian.kariuki@company.com", 88000.00, "DPT003");
