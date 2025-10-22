@@ -15,7 +15,7 @@ datasource db {
 }
 
 model Department {
-  ID   String      @id     @db.NVarChar(50)
+  ID             String      @id @db.NVarChar(50)
   DepartmentName String    @db.NVarChar(50)
   Location       String?   @db.NVarChar(100)
   employees     Employee[]
