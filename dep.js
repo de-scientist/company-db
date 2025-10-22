@@ -2,22 +2,32 @@
  
  const prisma = new PrismaClient();
  
- //Write a function named getDepartment that retrieves a single department from the database based on its ID and The function should take one parameter, the department ID, and use Prisma;s findUnique() method to fetch the matching department record.If the department is found, log it to the console, if it is not found, log the message "Department not found"
-    async function getDepartment(departmentId) {
-      const department = await prisma.department.findUnique({
-        where: {
-          ID: departmentId,
-        },
-      });
-      return department;
-    }
-
-    // Call the getDepartment function with a sample ID and log the result
-    const sampleId = "DPT001";
-    getDepartment(sampleId).then((department) => {
-      if (department) {
-        console.log('Department Found:', department);
-      } else {
-        console.log('Department not found');
+ async function getBySalaryRange(min, max) {
+      if (min > max) {
+        throw new Error("Minimum cannot be greater than maximum");
       }
+      const employees = await prisma.employee.findMany({
+        where: {
+          AND: [
+            {
+              salary: {
+                gte: min,
+                lte: max,
+              }
+            }
+          ]
+        },
+        include: {
+          department: true,
+        }
+      });
+      return employees;
+    } 
+    // Call the getBySalaryRange function with sample values and log the results
+    const minSalary = 70000.00;
+    const maxSalary = 90000.00;
+    getBySalaryRange(minSalary, maxSalary).then((employees) => {
+      console.log(`Employees with salary between ${minSalary} and ${maxSalary}:`, employees);
+    }).catch((error) => {
+      console.error(error.message);
     });
