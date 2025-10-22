@@ -37,27 +37,6 @@ main()
 
 
 
-    //Write a function named updateDepartment that updates the location of the Cyber Security department (DPT004) to "Kericho Campus".The function should use Prisma's update() method to find the department by its ID (DPT004) and modify the location field.
-    async function updateDepartment(departmentId, newLocation) {
-      const updatedDepartment = await prisma.department.update({
-        where: {
-          ID: departmentId,
-        },
-        data: {
-          Location: newLocation,
-        },
-      });
-      return updatedDepartment;
-    }
-
-
-    // Call the updateDepartment function to change the location of DPT004 and log the result
-    const updateId = "DPT004";
-    const newLocation = "Kericho Campus";
-    updateDepartment(updateId, newLocation).then((updatedDepartment) => {
-      console.log('Updated Department:', updatedDepartment);
-    });
-
 
 
     //Write a function named createEmployee that adds a new employee record to the database. It should take parameters for the id: a string that uniquely identifies an employee firstName: The employee's first name.lastName: The employee's last name..email: The employee's email address. salary: The employee's salary amount.departmentId: The ID of the department the employee belongs to. The function should use Prisma's create method to insert new employee records into the database. 
